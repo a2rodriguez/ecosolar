@@ -1,0 +1,452 @@
+/*!
+ * animate.css -http://daneden.me/animate
+ * Version - 3.7.0
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ *
+ * Copyright (c) 2018 Daniel Eden
+ */
+
+/*custom font*/
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+/*basic reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    background: #1D428A;
+}
+
+body {
+    font-family: roboto, arial, verdana;
+    background: transparent;
+}
+
+.row{
+  margin-left: 0;
+  margin-right: 0;
+
+}
+
+.logo {
+    width: auto;
+    height: 10em;
+    align-items: center;
+}
+/*form styles*/
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+}
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+
+    /*stacking fieldsets above each other*/
+    position: relative;
+}
+
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+    display: none;
+}
+
+/*inputs*/
+#msform input, #msform textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 1.2em; /*écriture dans les bouttons*/
+}
+
+#msform input:focus, #msform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #2098ce;
+    outline-width: 0;
+    transition: All 0.5s ease-in;
+    -webkit-transition: All 0.5s ease-in;
+    -moz-transition: All 0.5s ease-in;
+    -o-transition: All 0.5s ease-in;
+}
+
+#msform .labelTitle {
+  text-align: right;
+  padding-top: 12px
+}
+
+label{
+  font-size: 1.3em;
+}
+
+
+#msform .dataInpt {
+    width: 50%
+}
+
+#msform .radioInpt {
+    text-align: left;
+    padding-left: 0px;
+}
+
+#msform .radioBlock {
+    display: inline-block;
+    margin: 10px 10px 0;
+    vertical-align: middle;
+}
+
+#msform .radioItem {
+    width: unset;
+}
+
+/*buttons*/
+#msform .action-button {
+    width: 100px;
+    background: #ff671f;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#msform .action-button:hover, #msform .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #2098ce;
+}
+
+#msform .action-button-previous {
+    width: 100px;
+    background: #aCbEd0;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#msform .action-button-previous:hover, #msform .action-button-previous:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #aCbEd0;
+}
+
+/*headings*/
+.fs-title {
+    font-size: 1.8em;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.fs-subtitle {
+    font-weight: normal;
+    font-size: 1.3em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/*progressbar*/
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+}
+
+#progressbar li {
+    list-style-type: none;
+    color: white;
+    /*text-transform: uppercase;*/
+    font-size: 1.3em;
+    width: 16.6%; /* etait a 33.33%*/
+    float: left;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+#progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 24px;
+    height: 24px;
+    line-height: 26px;
+    display: block;
+    font-size: 1.2em;
+    color: #333;
+    background: white;
+    border-radius: 25px;
+    margin: 0 auto 10px auto;
+}
+
+/*progressbar connectors*/
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: -1; /*put it behind the numbers*/
+}
+
+#progressbar li:first-child:after {
+    /*connector not needed before the first step*/
+    content: none;
+}
+
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before, #progressbar li.active:after {
+    background: #ff671f;
+    color: white;
+}
+
+
+.input-group {
+    flex-wrap: nowrap;
+}
+
+.form-control {
+  height: 20%;
+}
+
+/******POUR MODIFIER LE TITRE******/
+
+.fs-title {
+  animation-name: flipInX;
+  animation-duration: 1s;
+  margin-bottom: 0px;
+  margin-top: 1%;
+}
+
+.display_hr {
+  display: flex;
+  justify-content: center;
+}
+
+hr {
+  background-color: #fF671F;
+  width: 10%;
+  height: 2px;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.hr1 {
+  animation-name: fadeInLeft;
+  animation-duration: 800ms;
+}
+
+.hr2 {
+  animation-name: fadeInRight;
+  animation-duration: 800ms;
+}
+
+.electro {
+  margin-top: 4%;
+}
+
+.electro button {
+  background-color: #1D428A;
+}
+
+/******PARTIE SURFACE TOITURE******/
+.surface_toiture{
+  margin-left: auto;
+  margin-right: auto;
+}
+.toiture {
+  margin-top: 4%;
+}
+
+.batiment {
+  margin-top: 4%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+
+.surface_toiture:hover {
+  transition: 200ms;
+  transform: scale(1.05);
+}
+
+.button_toiture {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4%;
+}
+
+.button_toiture button {
+  height: 120px;
+  width: 90px;
+  margin-left: 4%;
+  margin-top: 50%;
+  background-color: lightgrey;
+  border: none;
+  box-shadow: 0px 1px 2px;
+}
+
+.button_toiture button:hover {
+
+  transform: scale(1.05);
+  transition: 200ms;
+  box-shadow: 0px 1px 2px;
+  background-color: #fF671F;
+}
+
+.toiture_svg {
+  height: 30px;
+  width: 30px;
+}
+
+.toiture_svg2 {
+  height: 40px;
+  width: 40px;
+}
+
+.toiture_svg3 {
+  height: 50px;
+  width: 50px;
+}
+
+button .toiture_svg {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/******POUR MODIFIER LA CONSO*******/
+.conso{
+  margin-right: 2%;
+}
+#input_conso{
+  height: 1.5em;
+}
+#chauffage{
+  margin-right: 2%;
+}
+.display_conso {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2%;
+  margin-top: 4%;
+}
+
+.display_button {
+  display: flex;
+}
+
+.button_autre {
+  background-color: lightgrey;
+  border: none;
+  border-radius: 5%;
+  width: 5em;
+  height: 5em;
+  margin-left: 3%;
+  animation-name: bounceIn;
+  animation-duration: 1s;
+}
+
+.button_autre:hover {
+  background-color: #87CEFA;
+  transform: scale(1.02);
+}
+
+.button_edf {
+  background-color: #00BFFF;
+  border: none;
+  border-radius: 5%;
+  width: 5em;
+  height: 5em;
+  margin-left: 3%;
+  animation-name: bounceIn;
+  animation-duration: 1s;
+}
+
+.button_edf:hover {
+  background-color: #87CEFA;
+  transform: scale(1.03);
+}
+
+/****** POUR MODIFIER LE CHAUFFAGE*******/
+
+.display_chauff {
+  display: flex;
+  justify-content: center;
+  height: 12em;
+}
+
+.chauff_colonne {
+  display: flex;
+  flex-direction: column;
+}
+
+.chauff_colonne img {
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 2%;
+}
+
+.img_chauff1 {
+  animation-name: bounceIn;
+  animation-duration: 1.4s;
+}
+
+
+.img_chauff2 {
+  animation-name: bounceIn;
+  animation-duration: 1.4s;
+}
+
+/*****PARTIE CHECKBOX*******/
+
+.checkbox i {
+  position: absolute;
+  margin-left: 33%;
+  margin-top: 35%;
+  color: #18B518;
+  display: none;
+}
+
+.hauteur {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.cotation{
+
+}
+
+[required] {
+   border: 2px dotted orange;
+}
+
+.copyright {
+  text-align: center;
+}

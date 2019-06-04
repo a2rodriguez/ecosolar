@@ -1,0 +1,31 @@
+
+
+/* positionnements et relations descriptions */
+
+#Zone1 {
+    
+    z-index: 2;
+    top: -16em;
+    left: 5em;
+}
+
+#Zone2 {
+    
+    z-index: 2;
+    top: -12em;
+    left: 5em;
+}
+
+#Zone3 {
+    
+    z-index: 2;
+    top: -10em;
+    left: 5em;
+}
+
+#Zone4 {
+    
+    z-index: 2;
+    top: -9em;
+    left: 8em;
+}
